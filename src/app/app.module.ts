@@ -11,6 +11,7 @@ import { EditarProductoComponent } from './editar-producto/editar-producto.compo
 import { LoginComponent } from './login/login.component';
 import { MenuComponent } from './menu/menu.component';
 import { TokenInterceptor } from './interceptors/token.interceptor';
+import { MapaComponent } from './mapa/mapa.component';
 
 
 @NgModule({
@@ -21,12 +22,13 @@ import { TokenInterceptor } from './interceptors/token.interceptor';
     EditarProductoComponent,
     LoginComponent,
     MenuComponent,
+    MapaComponent,
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
   ],
   //interceptores para que se pueda aplicar globalmente
   providers: [
