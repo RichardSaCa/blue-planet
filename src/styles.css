@@ -15,3 +15,11 @@ p{
  h1{
   color: #dae5f6;
  }
+
+ .white-label {
+  background-color: white !important; /* Fondo blanco */
+  padding: 1px; /* Espacio alrededor del texto del label */
+  border: 2px solid #ccc; /* Borde alrededor del label */
+  border-radius: 4px; /* Bordes redondeados */
+  font-weight: bold; /* Texto en negrita (opcional) */
+}
