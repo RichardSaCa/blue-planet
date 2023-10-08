@@ -12,14 +12,13 @@
       centeredSlides="true"
       [ngStyle]="estilos"
       >
-        <swiper-slide class="text-center">
+        <swiper-slide class="text-center" #texto>
           <h2 style="margin: 30px" class="text-center" >Nacimiento</h2>
           <div class="d-flex">
-            <google-map width="750px"
-              height="1000px"
-              [center]="center"
-              [zoom]="zoom">
-            </google-map>
+          <google-map [center]="markerPositions[0]" [zoom]="zoom" [options]="mapOptions">
+              <!-- Utiliza *ngFor para crear un marcador por cada coordenada -->
+              <map-marker *ngFor="let position of markerPositions" [position]="position" [icon]="customIcon"></map-marker>
+          </google-map>
             <div class="container">
               <img src="https://raw.githubusercontent.com/RichardSaCa/UnicaucaVacacionesImages/main/macizoCauca.png" width="480" height="380"  alt="">
               <h2 class="text-center info" >Información</h2>
@@ -36,17 +35,16 @@
         <swiper-slide class="text-center">
           <h2 style="margin: 30px" class="text-center" >Paso por Popayán</h2>
           <div class="d-flex">
-            <google-map width="750px"
-            height="1000px"
-            [center]="center"
-            [zoom]="zoom">
+            <google-map [center]="markerPositions[1]" [zoom]="zoom" [options]="mapOptions">
+              <!-- Utiliza *ngFor para crear un marcador por cada coordenada -->
+              <map-marker *ngFor="let position of markerPositions" [position]="position" [icon]="customIcon"></map-marker>
             </google-map>
             <div class="container">
               <img src="https://raw.githubusercontent.com/RichardSaCa/UnicaucaVacacionesImages/main/popayanRioCauca2.png" width="480" height="380"  alt="">
               <h2 class="text-center info" >Información</h2>
-              <p class="pe" style="margin: 30px">El Río Cauca es la principal arteria fluvial del Occidente Colombiano, nace en el sur del país en el Macizo Colombiano, en el cerro de El Español cerca al Páramo de Sotará en el Departamento del Cauca, a una altura aproximada de 3.200msnm, y desciende siguiendo su curso en dirección paralela a la cordillera Occidental.</p>
+              <p class="pe" style="margin: 30px">El río Cauca es el de mayor caudal que pasa por Popayán; la primera vereda que hace parte de su recorrido es El Carmelo por la parte sur del municipio; allí, su posición geográfica sirve para demarca los límites por el oriente con el municipio de Purecé.</p>
               <button class="btn btn-warning" style="margin-left: 30px" (click)="mostrarCaucaCuriosidad()">Sabias que?</button>
-              <a class="btn btn-warning" style="margin-left: 30px" href="https://www.minambiente.gov.co/gestion-integral-del-recurso-hidrico/plataformas-colaborativas/plataforma-colaborativa-2-cuenca-alta-del-rio-cauca/" target="_blank">Ver más</a>
+              <a class="btn btn-warning" style="margin-left: 30px" href="https://elnuevoliberal.com/noticia-principal/el-paso-del-rio-cauca-por-popayan/#:~:text=El%20r%C3%ADo%20Cauca%20es%20el,con%20el%20municipio%20de%20Purec%C3%A9." target="_blank">Ver más</a>
               <div [ngStyle]="estiloDivCauca" >
                 <p class="pe" style="margin: 30px">Tiene una longitud de 1.360 kilómetros y desemboca en el río Magdalena, en el Departamento de Bolívar, constituyéndose en su más importante afluente. Atraviesa de sur a norte nueve departamentos (Cauca, Valle del Cauca, Quindío, Risaralda, Caldas, Antioquia, Córdoba, Sucre y Bolívar)</p>
               </div>
@@ -57,15 +55,14 @@
         <swiper-slide class="text-center">
           <h2 style="margin: 30px" class="text-center" >Represa salvajina</h2>
           <div class="d-flex">
-            <google-map width="750px"
-            height="1000px"
-            [center]="center"
-            [zoom]="zoom">
+            <google-map [center]="markerPositions[2]" [zoom]="zoom" [options]="mapOptions">
+              <!-- Utiliza *ngFor para crear un marcador por cada coordenada -->
+              <map-marker *ngFor="let position of markerPositions" [position]="position" [icon]="customIcon"></map-marker>
             </google-map>
           <div class="container">
             <img src="https://raw.githubusercontent.com/RichardSaCa/UnicaucaVacacionesImages/main/represaRicoCauca.png" width="480" height="380"  alt="">
             <h2 class="text-center info" >Información</h2>
-            <p class="pe" style="margin: 30px">El Río Cauca es la principal arteria fluvial del Occidente Colombiano, nace en el sur del país en el Macizo Colombiano, en el cerro de El Español cerca al Páramo de Sotará en el Departamento del Cauca, a una altura aproximada de 3.200msnm, y desciende siguiendo su curso en dirección paralela a la cordillera Occidental.</p>
+            <p class="pe" style="margin: 30px">La represa de Salvajina es una central hidroeléctrica con embalse que fue puesta en operación en 1985, en el norte del departamento del Cauca, en inmediaciones de los municipios de Suárez y Morales.</p>
             <button class="btn btn-warning" style="margin-left: 30px" (click)="mostrarCaucaCuriosidad()">Sabias que?</button>
             <a class="btn btn-warning" style="margin-left: 30px" href="https://www.minambiente.gov.co/gestion-integral-del-recurso-hidrico/plataformas-colaborativas/plataforma-colaborativa-2-cuenca-alta-del-rio-cauca/" target="_blank">Ver más</a>
             <div [ngStyle]="estiloDivCauca" >
@@ -78,17 +75,16 @@
         <swiper-slide class="text-center">
           <h2 style="margin: 30px" class="text-center" >Valle del Cauca</h2>
           <div class="d-flex">
-            <google-map width="750px"
-              height="1000px"
-              [center]="center"
-              [zoom]="zoom">
+            <google-map [center]="markerPositions[3]" [zoom]="zoom" [options]="mapOptions">
+              <!-- Utiliza *ngFor para crear un marcador por cada coordenada -->
+              <map-marker *ngFor="let position of markerPositions" [position]="position" [icon]="customIcon"></map-marker>
             </google-map>
             <div class="container">
               <img src="https://raw.githubusercontent.com/RichardSaCa/UnicaucaVacacionesImages/main/caliRioCauca.png" width="480" height="380"  alt="">
               <h2 class="text-center info" >Información</h2>
-              <p class="pe" style="margin: 30px">El Río Cauca es la principal arteria fluvial del Occidente Colombiano, nace en el sur del país en el Macizo Colombiano, en el cerro de El Español cerca al Páramo de Sotará en el Departamento del Cauca, a una altura aproximada de 3.200msnm, y desciende siguiendo su curso en dirección paralela a la cordillera Occidental.</p>
+              <p class="pe" style="margin: 30px">En la cuenca alta del río Cauca, Cali es el principal asentamiento humano que se beneficia de sus servicios ambientales, al suministrar agua potable a tres cuartos de su población.  Así como nuestra ciudad recibe las bondades del río, también es uno de sus mayores focos contaminantes. Si bien otros fenómenos también afectan la calidad del agua como la erosión, la deforestación, la minería ilegal y el mal estado de los ríos tributarios, no se puede desconocer la alta carga contaminante que aporta la ciudad y, por lo tanto, su rol en la generación de soluciones..</p>
               <button class="btn btn-warning" style="margin-left: 30px" (click)="mostrarCaucaCuriosidad()">Sabias que?</button>
-              <a class="btn btn-warning" style="margin-left: 30px" href="https://www.minambiente.gov.co/gestion-integral-del-recurso-hidrico/plataformas-colaborativas/plataforma-colaborativa-2-cuenca-alta-del-rio-cauca/" target="_blank">Ver más</a>
+              <a class="btn btn-warning" style="margin-left: 30px" href="https://propacifico.org/blog/lo-que-el-rio-cauca-le-pide-a-cali/" target="_blank">Ver más</a>
               <div [ngStyle]="estiloDivCauca" >
                 <p class="pe" style="margin: 30px">Tiene una longitud de 1.360 kilómetros y desemboca en el río Magdalena, en el Departamento de Bolívar, constituyéndose en su más importante afluente. Atraviesa de sur a norte nueve departamentos (Cauca, Valle del Cauca, Quindío, Risaralda, Caldas, Antioquia, Córdoba, Sucre y Bolívar)</p>
               </div>

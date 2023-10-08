@@ -46,10 +46,32 @@ export class SlideComponent implements OnInit {
   title = 'Como usar el Componente Google Maps de Angular 9';
 
 
-  // Configuración de Google Maps
-  center = {lat: 2.466645, lng: -76.615728};
+  center: google.maps.LatLngLiteral = { lat: 2.463302, lng: -76.588921 };
   zoom = 13;
-  display?: google.maps.LatLngLiteral;
+  mapOptions: google.maps.MapOptions = {
+    mapTypeId: 'roadmap',
+  };
+
+  markerPositions: google.maps.LatLngLiteral[] = [{ lat: 1.78843370, lng:  -76.4925330},
+                                                  { lat: 2.463302, lng: -76.588921 },
+                                                  { lat: 2.921619, lng: -76.713438 },
+                                                  { lat: 3.205501, lng: -76.494269, }];
+
+
+  // Define el icono personalizado
+  customIcon: google.maps.Icon = {
+    url: 'https://cdn.icon-icons.com/icons2/1808/PNG/512/info_115118.png', // Reemplaza con la URL de tu icono personalizado
+    scaledSize: new google.maps.Size(64, 64), // Tamaño del icono
+  };
+                                                  // Función que se ejecutará cuando se haga clic en el mapa
+  onMapClick(event: google.maps.MapMouseEvent) {
+    const latLng = event.latLng; // Obtiene las coordenadas del clic
+
+    // Verifica que latLng no sea undefined antes de agregarlo a markerPositions
+    if (latLng) {
+      this.markerPositions.push({ lat: latLng.lat(), lng: latLng.lng() });
+    }
+  }
 
 
 }
