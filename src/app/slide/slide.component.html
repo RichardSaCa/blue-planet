@@ -15,9 +15,13 @@
         <swiper-slide class="text-center" #texto>
           <h2 style="margin: 30px" class="text-center" >Nacimiento</h2>
           <div class="d-flex">
-          <google-map [center]="markerPositions[0]" [zoom]="zoom" [options]="mapOptions">
+          <google-map [center]="markerPositions1[0]" [zoom]="zoom" [options]="mapOptions">
               <!-- Utiliza *ngFor para crear un marcador por cada coordenada -->
-              <map-marker *ngFor="let position of markerPositions" [position]="position" [icon]="customIcon"></map-marker>
+              <map-marker *ngFor="let position of markerPositions"
+              [position]="position.position"
+              [icon]="position.customIcon"
+              [label]="{ color: 'black', text: position.label, className: 'white-label' }">
+            </map-marker>
           </google-map>
             <div class="container">
               <img src="https://raw.githubusercontent.com/RichardSaCa/UnicaucaVacacionesImages/main/macizoCauca.png" width="480" height="380"  alt="">
@@ -35,9 +39,13 @@
         <swiper-slide class="text-center">
           <h2 style="margin: 30px" class="text-center" >Paso por Popayán</h2>
           <div class="d-flex">
-            <google-map [center]="markerPositions[1]" [zoom]="zoom" [options]="mapOptions">
+            <google-map [center]="markerPositions1[1]" [zoom]="zoom" [options]="mapOptions">
               <!-- Utiliza *ngFor para crear un marcador por cada coordenada -->
-              <map-marker *ngFor="let position of markerPositions" [position]="position" [icon]="customIcon"></map-marker>
+              <map-marker *ngFor="let position of markerPositions"
+              [position]="position.position"
+              [icon]="position.customIcon"
+              [label]="{ color: 'black', text: position.label, className: 'white-label' }">
+            </map-marker>
             </google-map>
             <div class="container">
               <img src="https://raw.githubusercontent.com/RichardSaCa/UnicaucaVacacionesImages/main/popayanRioCauca2.png" width="480" height="380"  alt="">
@@ -55,9 +63,13 @@
         <swiper-slide class="text-center">
           <h2 style="margin: 30px" class="text-center" >Represa salvajina</h2>
           <div class="d-flex">
-            <google-map [center]="markerPositions[2]" [zoom]="zoom" [options]="mapOptions">
+            <google-map [center]="markerPositions1[2]" [zoom]="zoom" [options]="mapOptions">
               <!-- Utiliza *ngFor para crear un marcador por cada coordenada -->
-              <map-marker *ngFor="let position of markerPositions" [position]="position" [icon]="customIcon"></map-marker>
+              <map-marker *ngFor="let position of markerPositions"
+              [position]="position.position"
+              [icon]="position.customIcon"
+              [label]="{ color: 'black', text: position.label, className: 'white-label' }">
+            </map-marker>
             </google-map>
           <div class="container">
             <img src="https://raw.githubusercontent.com/RichardSaCa/UnicaucaVacacionesImages/main/represaRicoCauca.png" width="480" height="380"  alt="">
@@ -75,9 +87,13 @@
         <swiper-slide class="text-center">
           <h2 style="margin: 30px" class="text-center" >Valle del Cauca</h2>
           <div class="d-flex">
-            <google-map [center]="markerPositions[3]" [zoom]="zoom" [options]="mapOptions">
+            <google-map [center]="markerPositions1[3]" [zoom]="zoom" [options]="mapOptions">
               <!-- Utiliza *ngFor para crear un marcador por cada coordenada -->
-              <map-marker *ngFor="let position of markerPositions" [position]="position" [icon]="customIcon"></map-marker>
+              <map-marker *ngFor="let position of markerPositions"
+              [position]="position.position"
+              [icon]="position.customIcon"
+              [label]="{ color: 'black', text: position.label, className: 'white-label' }">
+             </map-marker>
             </google-map>
             <div class="container">
               <img src="https://raw.githubusercontent.com/RichardSaCa/UnicaucaVacacionesImages/main/caliRioCauca.png" width="480" height="380"  alt="">
