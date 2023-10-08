@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -12,6 +12,15 @@ import { LoginComponent } from './login/login.component';
 import { MenuComponent } from './menu/menu.component';
 import { TokenInterceptor } from './interceptors/token.interceptor';
 import { MapaComponent } from './mapa/mapa.component';
+import { SlideComponent,} from './slide/slide.component';
+import {GoogleMapsModule} from '@angular/google-maps';
+
+
+// import function to register Swiper custom elements
+import { register } from 'swiper/element/bundle';
+// register Swiper custom elements
+register();
+
 
 
 @NgModule({
@@ -23,17 +32,21 @@ import { MapaComponent } from './mapa/mapa.component';
     LoginComponent,
     MenuComponent,
     MapaComponent,
+    SlideComponent,
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
     FormsModule,
+    GoogleMapsModule,
+
   ],
   //interceptores para que se pueda aplicar globalmente
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true }
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA], //esquema apra las imagenes
 })
 export class AppModule { }

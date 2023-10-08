@@ -18,21 +18,22 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit(){
-    this.loginServicio.iniciarSesion(this.login).subscribe(
-      {
-        next: (datos) =>{
-          this.irListaProductos();
-          console.log("Inicio autorizado ",datos);
-        },
-        error:(err: any) => {
-          console.log("Erro encontrado: ",err)
-        }
-      }
-    )
+    // this.loginServicio.iniciarSesion(this.login).subscribe(
+    //   {
+    //     next: (datos) =>{
+    //       this.irListaProductos();
+    //       console.log("Inicio autorizado ",datos);
+    //     },
+    //     error:(err: any) => {
+    //       console.log("Erro encontrado: ",err)
+    //     }
+    //   }
+    // )
+    this.irListaProductos();
   }
 
   irListaProductos(){
-    this.enrutador.navigate(['/productos']);
+    this.enrutador.navigate(['/slide']);
   }
 
 }

@@ -1,0 +1,101 @@
+<app-menu></app-menu>
+<div class="container">
+  <h1 class="text-center"  style="margin: 30px">{{titulo}}</h1>
+  <button class="btn btn-success" (click)="mostrarCauca()">Rio Cauca</button>
+  <button class="btn btn-success" style="margin-left:10px" (click)="mostrarMagdalena()">Rio Magdalena</button>
+
+  <div style="visibility: hidden !important;">
+    <swiper-container
+      navigation="true"
+      pagination="true"
+      pagination-clickable="true"
+      centeredSlides="true"
+      [ngStyle]="estilos"
+      >
+        <swiper-slide class="text-center">
+          <h2 style="margin: 30px" class="text-center" >Nacimiento</h2>
+          <div class="d-flex">
+            <google-map width="750px"
+              height="1000px"
+              [center]="center"
+              [zoom]="zoom">
+            </google-map>
+            <div class="container">
+              <img src="/assets/image/macizoCauca.png" width="480" height="380"  alt="">
+              <h2 class="text-center info" >Información</h2>
+              <p class="pe" style="margin: 30px">El Río Cauca es la principal arteria fluvial del Occidente Colombiano, nace en el sur del país en el Macizo Colombiano, en el cerro de El Español cerca al Páramo de Sotará en el Departamento del Cauca, a una altura aproximada de 3.200msnm, y desciende siguiendo su curso en dirección paralela a la cordillera Occidental.</p>
+              <button class="btn btn-warning" style="margin-left: 30px" (click)="mostrarCaucaCuriosidad()">Sabias que?</button>
+              <a class="btn btn-warning" style="margin-left: 30px" href="https://www.minambiente.gov.co/gestion-integral-del-recurso-hidrico/plataformas-colaborativas/plataforma-colaborativa-2-cuenca-alta-del-rio-cauca/" target="_blank">Ver más</a>
+              <div [ngStyle]="estiloDivCauca" >
+                <p class="pe" style="margin: 30px">Tiene una longitud de 1.360 kilómetros y desemboca en el río Magdalena, en el Departamento de Bolívar, constituyéndose en su más importante afluente. Atraviesa de sur a norte nueve departamentos (Cauca, Valle del Cauca, Quindío, Risaralda, Caldas, Antioquia, Córdoba, Sucre y Bolívar)</p>
+              </div>
+            </div>
+          </div>
+        </swiper-slide>
+
+        <swiper-slide class="text-center">
+          <h2 style="margin: 30px" class="text-center" >Paso por Popayán</h2>
+          <div class="d-flex">
+            <google-map width="750px"
+            height="1000px"
+            [center]="center"
+            [zoom]="zoom">
+            </google-map>
+            <div class="container">
+              <img src="/assets/image/popayanRioCauca2.png" width="480" height="380"  alt="">
+              <h2 class="text-center info" >Información</h2>
+              <p class="pe" style="margin: 30px">El Río Cauca es la principal arteria fluvial del Occidente Colombiano, nace en el sur del país en el Macizo Colombiano, en el cerro de El Español cerca al Páramo de Sotará en el Departamento del Cauca, a una altura aproximada de 3.200msnm, y desciende siguiendo su curso en dirección paralela a la cordillera Occidental.</p>
+              <button class="btn btn-warning" style="margin-left: 30px" (click)="mostrarCaucaCuriosidad()">Sabias que?</button>
+              <a class="btn btn-warning" style="margin-left: 30px" href="https://www.minambiente.gov.co/gestion-integral-del-recurso-hidrico/plataformas-colaborativas/plataforma-colaborativa-2-cuenca-alta-del-rio-cauca/" target="_blank">Ver más</a>
+              <div [ngStyle]="estiloDivCauca" >
+                <p class="pe" style="margin: 30px">Tiene una longitud de 1.360 kilómetros y desemboca en el río Magdalena, en el Departamento de Bolívar, constituyéndose en su más importante afluente. Atraviesa de sur a norte nueve departamentos (Cauca, Valle del Cauca, Quindío, Risaralda, Caldas, Antioquia, Córdoba, Sucre y Bolívar)</p>
+              </div>
+            </div>
+          </div>
+        </swiper-slide>
+
+        <swiper-slide class="text-center">
+          <h2 style="margin: 30px" class="text-center" >Represa salvajina</h2>
+          <div class="d-flex">
+            <google-map width="750px"
+            height="1000px"
+            [center]="center"
+            [zoom]="zoom">
+            </google-map>
+          <div class="container">
+            <img src="/assets/image/represaRicoCauca.png" width="480" height="380"  alt="">
+            <h2 class="text-center info" >Información</h2>
+            <p class="pe" style="margin: 30px">El Río Cauca es la principal arteria fluvial del Occidente Colombiano, nace en el sur del país en el Macizo Colombiano, en el cerro de El Español cerca al Páramo de Sotará en el Departamento del Cauca, a una altura aproximada de 3.200msnm, y desciende siguiendo su curso en dirección paralela a la cordillera Occidental.</p>
+            <button class="btn btn-warning" style="margin-left: 30px" (click)="mostrarCaucaCuriosidad()">Sabias que?</button>
+            <a class="btn btn-warning" style="margin-left: 30px" href="https://www.minambiente.gov.co/gestion-integral-del-recurso-hidrico/plataformas-colaborativas/plataforma-colaborativa-2-cuenca-alta-del-rio-cauca/" target="_blank">Ver más</a>
+            <div [ngStyle]="estiloDivCauca" >
+              <p class="pe" style="margin: 30px">Tiene una longitud de 1.360 kilómetros y desemboca en el río Magdalena, en el Departamento de Bolívar, constituyéndose en su más importante afluente. Atraviesa de sur a norte nueve departamentos (Cauca, Valle del Cauca, Quindío, Risaralda, Caldas, Antioquia, Córdoba, Sucre y Bolívar)</p>
+            </div>
+          </div>
+        </div>
+        </swiper-slide>
+
+        <swiper-slide class="text-center">
+          <h2 style="margin: 30px" class="text-center" >Valle del Cauca</h2>
+          <div class="d-flex">
+            <google-map width="750px"
+              height="1000px"
+              [center]="center"
+              [zoom]="zoom">
+            </google-map>
+            <div class="container">
+              <img src="/assets/image/caliRioCauca.png" width="480" height="380"  alt="">
+              <h2 class="text-center info" >Información</h2>
+              <p class="pe" style="margin: 30px">El Río Cauca es la principal arteria fluvial del Occidente Colombiano, nace en el sur del país en el Macizo Colombiano, en el cerro de El Español cerca al Páramo de Sotará en el Departamento del Cauca, a una altura aproximada de 3.200msnm, y desciende siguiendo su curso en dirección paralela a la cordillera Occidental.</p>
+              <button class="btn btn-warning" style="margin-left: 30px" (click)="mostrarCaucaCuriosidad()">Sabias que?</button>
+              <a class="btn btn-warning" style="margin-left: 30px" href="https://www.minambiente.gov.co/gestion-integral-del-recurso-hidrico/plataformas-colaborativas/plataforma-colaborativa-2-cuenca-alta-del-rio-cauca/" target="_blank">Ver más</a>
+              <div [ngStyle]="estiloDivCauca" >
+                <p class="pe" style="margin: 30px">Tiene una longitud de 1.360 kilómetros y desemboca en el río Magdalena, en el Departamento de Bolívar, constituyéndose en su más importante afluente. Atraviesa de sur a norte nueve departamentos (Cauca, Valle del Cauca, Quindío, Risaralda, Caldas, Antioquia, Córdoba, Sucre y Bolívar)</p>
+              </div>
+            </div>
+        </div>
+        </swiper-slide>
+      </swiper-container>
+    </div>
+</div>
+

@@ -6,19 +6,20 @@ import { EditarProductoComponent } from './editar-producto/editar-producto.compo
 import { LoginComponent } from './login/login.component';
 import { AuthGuard } from './guards/auth.guard';
 import { RedirectGuard } from './guards/redirect.guard';
+import { SlideComponent } from './slide/slide.component';
 
 
 const routes: Routes = [
   //ruta por defaul
   {path: 'login',
-  canActivate: [ RedirectGuard ],
   component: LoginComponent},
   {path: 'productos',
   //implementamos el guardian con canActivate
-  canActivate: [ AuthGuard],
+
   component: ProductoListaComponent},
   {path: '', redirectTo: '/login', pathMatch: 'full'},
   {path: 'agregar-producto',canActivate: [ AuthGuard], component: AgregarProductoComponent},
+  {path: 'slide', component: SlideComponent},
   {path: 'editar-producto/:id',canActivate: [ AuthGuard], component: EditarProductoComponent},
 ];
 

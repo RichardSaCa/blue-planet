@@ -9,6 +9,8 @@ import { TokenService } from '../services/token.service';
 })
 export class MenuComponent implements OnInit {
 
+  ocultar: string = "visible"
+
   constructor(private enrutador: Router, private tokenService: TokenService) { }
 
   ngOnInit(): void {
